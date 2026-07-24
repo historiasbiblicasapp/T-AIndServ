@@ -21,7 +21,7 @@ export class EstoqueService {
 
     let query = supabaseAdmin
       .from('estoque')
-      .select('*, usuarios:id_responsavel(nome)', { count: 'exact' });
+      .select('*, usuarios:responsavel_id(nome)', { count: 'exact' });
 
     if (filters.busca) {
       query = query.or(`nome.ilike.%${filters.busca}%,descricao.ilike.%${filters.busca}%`);
