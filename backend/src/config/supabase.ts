@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 import { env } from './env.js';
 
-export const supabase = createClient(env.supabaseUrl, env.supabaseAnonKey);
+const supabaseUrl = env.supabaseUrl || 'http://localhost';
+const supabaseAnonKey = env.supabaseAnonKey || 'anon-key-missing';
+const supabaseServiceKey = env.supabaseServiceKey || 'service-key-missing';
 
-export const supabaseAdmin = createClient(env.supabaseUrl, env.supabaseServiceKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);

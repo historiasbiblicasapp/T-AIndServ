@@ -2,6 +2,7 @@
   "name": "ta-ind-serv-backend",
   "version": "1.0.0",
   "description": "Backend API - Gestão de Manutenção T&A Ind Serv",
+  "type": "module",
   "main": "dist/server.js",
   "scripts": {
     "dev": "node ./node_modules/tsx/dist/cli.mjs watch src/server.ts",
