@@ -21,7 +21,7 @@ export class EstoqueService {
 
     let query = supabaseAdmin
       .from('estoque')
-      .select('*, usuarios:responsavel_id(nome)', { count: 'exact' });
+      .select('*, usuarios:responsavel_id(nome_completo)', { count: 'exact' });
 
     if (filters.busca) {
       query = query.or(`nome.ilike.%${filters.busca}%,descricao.ilike.%${filters.busca}%`);
@@ -209,7 +209,7 @@ export class EstoqueService {
 
     const { data, error, count } = await supabaseAdmin
       .from('movimentacoes_estoque')
-      .select('*, usuarios:usuario_id(nome)', { count: 'exact' })
+      .select('*, usuarios:usuario_id(nome_completo)', { count: 'exact' })
       .eq('item_id', itemId)
       .order('criado_em', { ascending: false })
       .range(offset, offset + limit - 1);

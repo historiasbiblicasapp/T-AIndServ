@@ -25,8 +25,8 @@ export class OsService {
       .select(`
         *,
         empresas(id, nome_fantasia),
-        usuarios:colaborador_id(nome),
-        usuarios_criacao:usuario_criacao(nome)
+        usuarios:colaborador_id(nome_completo),
+        usuarios_criacao:usuario_criacao(nome_completo)
       `, { count: 'exact' });
 
     if (filters.busca) {
@@ -60,8 +60,8 @@ export class OsService {
       .select(`
         *,
         empresas(id, nome_fantasia),
-        usuarios:colaborador_id(nome),
-        usuarios_criacao:usuario_criacao(nome)
+        usuarios:colaborador_id(nome_completo),
+        usuarios_criacao:usuario_criacao(nome_completo)
       `)
       .eq('id', id)
       .single();
@@ -75,7 +75,7 @@ export class OsService {
 
     const { data: historico } = await supabaseAdmin
       .from('historico_os')
-      .select('*, usuarios:usuario_id(nome)')
+      .select('*, usuarios:usuario_id(nome_completo)')
       .eq('os_id', id)
       .order('criado_em', { ascending: false });
 
@@ -183,7 +183,7 @@ export class OsService {
   async getHistorico(osId: number) {
     const { data, error } = await supabaseAdmin
       .from('historico_os')
-      .select('*, usuarios:usuario_id(nome)')
+      .select('*, usuarios:usuario_id(nome_completo)')
       .eq('os_id', osId)
       .order('criado_em', { ascending: false });
 
