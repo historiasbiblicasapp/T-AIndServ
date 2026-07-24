@@ -109,7 +109,7 @@ export class AuthService {
   }
 
   async logout(token: string) {
-    const { error } = await supabase.auth.admin.signOut(token);
+    const { error } = await supabaseAdmin.auth.admin.signOut(token);
     if (error) {
       throw new AppError(400, 'Erro ao fazer logout');
     }

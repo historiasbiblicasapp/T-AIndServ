@@ -26,9 +26,9 @@ interface OrdemServico {
 
 interface Historico {
   id: number;
-  data: string;
   descricao: string;
-  autor?: string;
+  criado_em: string;
+  usuarios?: { nome: string };
 }
 
 interface Empresa {
@@ -365,7 +365,7 @@ export function OrdensServicoPage() {
                                 <div className="space-y-2">
                                   {historico.map((h) => (
                                     <div key={h.id} className="p-2 bg-white rounded border text-sm">
-                                      <p className="text-gray-500 text-xs">{formatDateTime(h.data)} {h.autor ? `- ${h.autor}` : ""}</p>
+                                      <p className="text-gray-500 text-xs">{formatDateTime(h.criado_em)} {h.usuarios?.nome ? `- ${h.usuarios.nome}` : ""}</p>
                                       <p>{h.descricao}</p>
                                     </div>
                                   ))}

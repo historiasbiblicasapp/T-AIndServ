@@ -30,12 +30,12 @@ interface ColabTreinamento {
   cursos_treinamentos?: { nome: string; norma_nr?: string };
 }
 
-const tipoColors: Record<string, "default" | "secondary" | "success" | "warning"> = {
+const tipoColors: Record<string, "default" | "secondary" | "success" | "warning" | "destructive"> = {
   interno: "default",
   externo: "secondary",
   online: "success",
   obrigatorio: "warning",
-  nr: "destructive" as any,
+  nr: "destructive",
 };
 
 export function TreinamentosPage() {
