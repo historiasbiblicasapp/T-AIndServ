@@ -1,7 +1,7 @@
 {
   "name": "ta-ind-serv-backend",
   "version": "1.0.0",
-  "description": "Backend API - Sistema de Gestão de RH T&A Ind Serv",
+  "description": "Backend API - Gestão de Manutenção T&A Ind Serv",
   "main": "dist/server.js",
   "scripts": {
     "dev": "node ./node_modules/tsx/dist/cli.mjs watch src/server.ts",

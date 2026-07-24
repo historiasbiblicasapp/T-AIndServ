@@ -55,13 +55,13 @@ export function LoginPage() {
         <CardHeader className="text-center">
           <div className="mb-4 flex justify-center">
             <img
-              src="/login-logo.svg"
+              src="/logo.png"
               alt="Logo T&A Ind Serv"
               className="h-24 w-24 rounded-2xl object-cover shadow-lg"
             />
           </div>
           <CardTitle className="text-2xl font-bold">T&A Ind Serv</CardTitle>
-          <CardDescription>Sistema de Gestão de RH</CardDescription>
+          <CardDescription>Gestão de Manutenção</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

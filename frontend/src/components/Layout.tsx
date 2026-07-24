@@ -57,7 +57,10 @@ export function Layout() {
       >
         <div className="flex items-center justify-between p-4">
           {sidebarOpen && (
-            <span className="text-lg font-bold">T&A Ind Serv</span>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-lg object-cover" />
+              <span className="text-lg font-bold">T&A Ind Serv</span>
+            </div>
           )}
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-gray-400 hover:text-white">
             <Menu size={20} />
@@ -94,7 +97,10 @@ export function Layout() {
           <div className="fixed inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
           <aside className="fixed left-0 top-0 h-full w-64 bg-gray-900 text-white p-4">
             <div className="flex items-center justify-between mb-8">
-              <span className="text-lg font-bold">T&A Ind Serv</span>
+              <div className="flex items-center gap-2">
+                <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-lg object-cover" />
+                <span className="text-lg font-bold">T&A Ind Serv</span>
+              </div>
               <button onClick={() => setMobileOpen(false)} className="text-gray-400 hover:text-white">
                 <X size={20} />
               </button>
