@@ -81,7 +81,7 @@ export function ColaboradorForm({ open, onOpenChange, onSaved, colaborador }: Co
 
   useEffect(() => {
     api.get("/estrutura/empresas").then((res) => {
-      setEmpresas(res.data.items || res.data);
+      setEmpresas(res.data.data || []);
     });
   }, []);
 
