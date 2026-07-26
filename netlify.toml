@@ -1,0 +1,11 @@
+[build]
+  command = "rm -rf node_modules package-lock.json && npm install && npm run build --workspace=frontend"
+  publish = "frontend/dist"
+
+[context.production.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
